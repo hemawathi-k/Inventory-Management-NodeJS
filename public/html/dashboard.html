@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css"> 
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h1>Inventory Management</h1>
+            <ul>
+                <li onclick="loadPage('dashboard-content.html')">Dashboard</li>
+                <li onclick="loadPage('suppliers.html')">Suppliers</li>
+                <li onclick="loadPage('brand.html')">Brand</li>
+                <li onclick="loadPage('product-category.html')">Product Category</li>
+                <li onclick="loadPage('uom.html')">UOM</li>
+                <li onclick="loadPage('products-list.html')">Products List</li>
+            </ul>
+            <div class="user-info">
+                <p id="username">Loading...</p>
+                <p id="email">Loading...</p>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </nav>
+
+        <!-- Right Content Area -->
+        <div class="content">
+            <iframe id="contentFrame" src="dashboard-content.html"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            document.getElementById("contentFrame").src = page;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = localStorage.getItem("username");
+            const email = localStorage.getItem("email");
+
+            if (username && email) {
+                document.getElementById("username").innerText = username;
+                document.getElementById("email").innerText = email;
+            } else {
+                alert("No user logged in. Redirecting to login page...");
+                window.location.href = "/html/loginsignup.html";
+            }
+        });
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem("username");
+            localStorage.removeItem("email");
+            alert("Logged out successfully!");
+            window.location.href = "/html/loginsignup.html";
+        }
+    </script>
+</body>
+</html>
