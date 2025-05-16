@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suppliers</title>
+  <link rel="stylesheet" href="../css/suppliers.css"/>
+</head>
+<body>
+  <div class="suppliers-container">
+    <div class="form-section">
+      <form id="supplierForm" onsubmit="return false;">
+        <div class="flex">
+          <div class="input"><input type="text" id="name" required placeholder="Name" /></div>
+          <div class="input"><input type="email" id="email" required placeholder="Email" /></div>
+          <div class="input"><input type="text" id="phone" required placeholder="Phone Number" /></div>
+          <div class="input"><input type="text" id="address" required placeholder="Address" /></div>
+          <div class="input"><input type="text" id="city" required placeholder="City" /></div>
+          <div class="input"><input type="text" id="state" required placeholder="State" /></div>
+          <div class="input"><input type="text" id="pincode" required placeholder="Pincode" /></div>
+          <div class="btn">
+            <button type="submit">Save</button>
+            <button type="button" onclick="clearFields()">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-section">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>SNo</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Pincode</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="supplierTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/suppliers.js"></script>
+</body>
+</html>

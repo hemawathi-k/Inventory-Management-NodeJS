@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UOM</title>
+  <link rel="stylesheet" href="../css/uom.css"/>
+</head>
+<body>
+  <div class="uom-container">
+    <h2>Unit of Measure</h2>
+
+    <div class="form-section">
+      <form id="UOMForm">
+        <div class="form-row">
+          <input type="text" id="uom" required placeholder="Enter UOM" />
+          <button type="submit">Save</button>
+          <button type="button" onclick="clearFields()">Clear</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Units of Measure</th>
+          </tr>
+        </thead>
+        <tbody id="BrandTable">
+          <!-- Data will be dynamically added -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../js/uom.js"></script>
+</body>
+</html>

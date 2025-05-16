@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products List</title>
+  <link rel="stylesheet" href="../css/products-list.css" />
+</head>
+<body>
+  <div class="product-list-container">
+    <div class="form-section">
+      <form id="productForm">
+        <div class="form-grid">
+          <div class="div1">
+           <input type="text" id="productName" placeholder="Product Name" required />
+           <select id="productCategory" required></select>
+          </div>
+          <div class="div2">
+            <select id="productBrand" required></select>
+            <select id="productUOM" required></select>
+          </div>
+          <div class="div3">
+            <select id="productGST">
+                <option value="0">0%</option>
+                <option value="5">5%</option>
+                <option value="12">12%</option>
+                <option value="18">18%</option>
+                <option value="28">28%</option>
+              </select>
+              <input type="number" id="productQty" placeholder="Quantity" required />
+              <input type="number" id="singleQtyCost" placeholder="Cost per Qty" required />
+              <input type="text" id="totalCost" placeholder="Total Cost" readonly />
+          </div>
+        <div class="button-row">
+          <button type="submit">Save</button>
+          <button type="button" onclick="clearForm()">Clear</button>
+        </div>
+       </div>  
+      </form>
+    </div>
+
+    <div class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>UOM</th>
+            <th>GST</th>
+            <th>Qty</th>
+            <th>Cost/Qty</th>
+            <th>Total Cost</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- Rows will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../js/products-list.js"></script>
+</body>
+</html>

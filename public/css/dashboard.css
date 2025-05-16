@@ -1,85 +1,141 @@
-body {
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
     display: flex;
     height: 100vh;
 }
 
-
+/* Sidebar */
 .sidebar {
-    width: 100px;
-    background: #2c3e50;
+    width: 130px; /* Further reduced width */
+    background-color: #2f2f2f;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
-    padding: 15px;
-    position: fixed;
-    height: 100%;
+    justify-content: space-between;
+    padding: 8px 6px; /* Reduced padding */
+    height: 100vh;
+    overflow: hidden; /* Removes scrollbar */
 }
 
 .sidebar h1 {
+    font-size: 12px; /* Reduced font size */
+    margin-bottom: 12px; /* Reduced bottom margin */
+    color: goldenrod;
     text-align: center;
-    font-size:15px;
-    margin: 10px;
 }
 
 .sidebar ul {
-    list-style-type: none;
+    list-style: none;
+    flex-grow: 1;
     padding: 0;
+    margin-bottom: 8px; /* Reduced bottom margin */
 }
 
 .sidebar ul li {
-    padding:6px 8px;
-    font-size: 10px;
+    font-size: 11px; /* Reduced font size */
+    margin: 3px 0; /* Further reduced margin between items */
     cursor: pointer;
-    transition: 0.3s;
+    padding: 5px 8px; /* Reduced padding */
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 
 .sidebar ul li:hover {
-    background: #34495e;
+    background-color: #444;
+    color: goldenrod;
+}
+
+/* User Info Section - Aligns properly */
+.user-info {
+    font-size: 10px; /* Reduced font size */
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 6px; /* Reduced padding */
+    margin-top: auto; /* Pushes it to the bottom */
 }
 
 .user-info p {
-    font-size: 8px;
-    padding: 0;
-    margin: 0;
-}
-
-.user-info {
-    padding: 15px;
-    border-top: 1px solid #555;
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
+    margin: 3px 0; /* Reduced margin */
+    word-break: break-word;
+    color: #ccc;
 }
 
 .user-info button {
-    background: #1fe79b;
-    color: white;
+    margin-top: 8px; /* Reduced top margin */
+    margin-bottom: 8px; /* Reduced bottom margin */
+    padding: 5px 8px; /* Reduced padding */
+    font-size: 11px; /* Reduced font size */
+    background-color: goldenrod;
+    color: #2f2f2f;
     border: none;
-    padding: 4px 8px;
-    font-size: 7px;
-    border-radius: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: 0.3s;
+    width:80px; /* Full width button */
 }
 
 .user-info button:hover {
-    background: #16ac72;
+    background-color: #d4a017;
 }
 
-
+/* Right Content */
 .content {
-    margin-left: 100px;
     flex: 1;
-    padding: 20px;
-    overflow: auto;
-    width: calc(100% - 100px);
+    background-color: #f0f0f0;
+    overflow: hidden;
+    display: flex;
 }
 
-iframe {
+.content iframe {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     border: none;
+}
+
+/* Responsive Sidebar for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .sidebar h1 {
+        flex-basis: 100%;
+        text-align: left;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+    }
+
+    .sidebar ul li {
+        font-size: 10px; /* Further reduced font size */
+        margin: 3px;
+        padding: 4px 5px; /* Reduced padding for smaller screens */
+    }
+
+    .user-info {
+        flex-basis: 100%;
+        margin-top: 8px;
+        border-top: none;
+    }
 }
